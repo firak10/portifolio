@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="pt-BR" class="h-full">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="only light">
+    <title>Meu Portfólio</title>
+    <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+    <script src="/_sdk/element_sdk.js"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-display {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        .project-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .project-card:hover .preview-overlay {
+            opacity: 1;
+        }
+
+        .profile-image {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .gradient-border {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 4px;
+        }
+
+        .iframe-container {
+            pointer-events: none;
+            transform: scale(0.25);
+            transform-origin: top left;
+            width: 400%;
+            height: 400%;
+        }
+        :root { color-scheme: only light; }
+    </style>
+    <style>
+        body {
+            box-sizing: border-box;
+        }
+    </style>
+    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+</head>
+
+<body class="h-full bg-slate-900 overflow-auto">
+    <div id="app" class="w-full min-h-full bg-gradient-to-br from-slate-900 via-purple-900/20 to-slate-900">
+        <!-- Decorative Elements -->
+        <div class="fixed inset-0 overflow-hidden pointer-events-none">
+            <div class="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-10 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl"></div>
+        </div>
+        <div class="relative z-10 max-w-6xl mx-auto px-4 py-12"><!-- Profile Card -->
+            <header class="mb-16">
+                <div class="bg-slate-800/50 backdrop-blur-xl rounded-3xl p-8 border border-slate-700/50 shadow-2xl">
+                    <div class="flex flex-col md:flex-row items-center gap-8"><!-- Profile Image -->
+                        <div class="profile-image gradient-border rounded-full flex-shrink-0">
+                            <div
+                                class="w-40 h-40 rounded-full bg-slate-700 flex items-center justify-center overflow-hidden">
+                                <img src="images/foto.png" alt="Foto de perfil" class="w-full h-full object-cover">
+
+                            </div>
+                        </div><!-- Profile Info -->
+                        <div class="text-center md:text-left flex-1">
+                            <h1 id="profile-name" class="font-display text-4xl md:text-5xl font-bold text-white mb-2">
+                                Lucas Scheres Firak</h1>
+                            <p id="profile-title" class="text-xl text-purple-400 font-medium mb-4">Desenvolvedor
+                                Front-end</p>
+                            <p id="profile-description" class="text-slate-300 text-lg leading-relaxed max-w-2xl">
+                                Apaixonado por criar experiências web incríveis. Especializado em HTML, CSS e
+                                JavaScript, transformando ideias em interfaces bonitas e funcionais.</p>
+                            <!-- Social Links -->
+                            <div class="flex gap-4 mt-6 justify-center md:justify-start">
+                                <a href="https://github.com/firak10" target="_blank" rel="noopener noreferrer"
+                                    class="w-10 h-10 rounded-full bg-slate-700 hover:bg-purple-600 flex items-center justify-center transition-colors">
+                                    <svg class="w-5 h-5 text-white" fill="currentColor" viewbox="0 0 24 24">
+                                        <path
+                                            d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                                    </svg>
+                                </a>
+                                <a href="https://linkedin.com/in/lucasfirak" target="_blank" rel="noopener noreferrer"
+                                    class="w-10 h-10 rounded-full bg-slate-700 hover:bg-blue-600 flex items-center justify-center transition-colors">
+                                    <svg class="w-5 h-5 text-white" fill="currentColor" viewbox="0 0 24 24">
+                                        <path
+                                            d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                    </svg>
+                                </a>
+                                <a href="https://wa.me/5542999359359" target="_blank" rel="noopener noreferrer"
+                                    class="w-10 h-10 rounded-full bg-slate-700 hover:bg-green-500 flex items-center justify-center transition-colors">
+                                    <svg class="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path
+                                            d="M20.52 3.48A11.82 11.82 0 0012.05 0C5.52 0 .17 5.36.17 11.95c0 2.1.55 4.15 1.6 5.96L0 24l6.26-1.64a11.8 11.8 0 005.79 1.48h.01c6.53 0 11.88-5.36 11.88-11.95 0-3.19-1.24-6.19-3.42-8.41zM12.06 21.6a9.6 9.6 0 01-4.89-1.34l-.35-.21-3.71.97.99-3.62-.23-.37a9.56 9.56 0 01-1.48-5.08c0-5.29 4.31-9.6 9.62-9.6 2.57 0 4.99 1 6.81 2.81a9.54 9.54 0 012.82 6.79c0 5.29-4.31 9.6-9.58 9.6zm5.26-7.19c-.29-.15-1.72-.85-1.98-.95-.27-.1-.46-.15-.66.15-.2.29-.76.95-.93 1.15-.17.2-.34.22-.63.07-.29-.15-1.22-.45-2.32-1.43-.86-.77-1.44-1.72-1.61-2.01-.17-.29-.02-.45.13-.6.13-.13.29-.34.44-.51.15-.17.2-.29.29-.49.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.91-2.2-.24-.58-.49-.5-.66-.51l-.56-.01c-.2 0-.52.07-.8.37-.27.29-1.05 1.02-1.05 2.49 0 1.47 1.08 2.89 1.23 3.09.15.2 2.13 3.25 5.16 4.56.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.72-.7 1.96-1.38.24-.68.24-1.26.17-1.38-.07-.12-.26-.2-.55-.34z" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header><!-- Projects Section -->
+            <section>
+                <h2 id="projects-title" class="font-display text-3xl font-bold text-white mb-8 text-center">🚀 Meus
+                    Projetos</h2>
+                <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Os projetos serão inseridos aqui -->
+                </div><!-- Empty State -->
+                <div id="empty-state" class="hidden text-center py-16">
+                    <div class="text-6xl mb-4">
+                        📁
+                    </div>
+                    <p class="text-slate-400 text-lg">Nenhum projeto adicionado ainda.</p>
+                    <p class="text-slate-500">Edite o array "projects" no código para adicionar seus projetos!</p>
+                </div>
+            </section>
+            <!-- Footer -->
+            <footer class="mt-16 text-center text-slate-500 text-sm">
+                <p>Feito com 💜 usando HTML, CSS e JavaScript</p>
+            </footer>
+        </div>
+    </div>
+    <script>
+
+        const projects = [
+            {
+                title: "Vendas de Landings Pages e Google Empresas",
+                url: "https://firak10.github.io/"
+            },
+            {
+                title: "Site Institucional Digital Card",
+                url: "https://digitalcardpg.com/"
+            },
+            {
+                title: "Landing Page para Carimbos",
+                url: "https://digitalcardpg.com/carimbos24h.html"
+            },
+            {
+                title: "Landing Page para Carteirinhas",
+                url: "https://digitalcardpg.com/carteirinhasestudantes.html"
+            },
+            {
+                title: "Pagina JS Pisos",
+                url: "https://firak10.github.io/jspisos"
+            },
+            {
+                title: "Pana - Terapeuta Holistica",
+                url: "https://firak10.github.io/pana"
+            },
+            {
+                title: "Jogo no Unity",
+                url: "https://firak10.github.io/jogosemnome1"
+            },
+            {
+                title: "Propaganda Landing Page",
+                url: "https://firak10.github.io/landings2027"
+            }
+        ];
+
+        // ============================================
+        // Configuração padrão e SDK
+        // ============================================
+
+        const defaultConfig = {
+            profile_name: "Lucas Scheres Firak",
+            profile_title: "Desenvolvedor Front-end",
+            profile_description: "Apaixonado por criar experiências web incríveis. Especializado em HTML, CSS e JavaScript, transformando ideias em interfaces bonitas e funcionais.",
+            projects_title: "🚀 Meus Projetos",
+            background_color: "#0f172a",
+            surface_color: "#1e293b",
+            text_color: "#f1f5f9",
+            primary_color: "#a855f7",
+            secondary_color: "#6366f1"
+        };
+
+        function createProjectCard(project, index) {
+            const card = document.createElement('a');
+            card.href = project.url;
+            card.target = "_blank";
+            card.rel = "noopener noreferrer";
+            card.className = "project-card block bg-slate-800/50 rounded-2xl overflow-hidden border border-slate-700/50 hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-500/10";
+            card.dataset.projectIndex = index;
+
+            card.innerHTML = `
+        <div class="aspect-video bg-slate-700 relative overflow-hidden">
+          <iframe 
+            src="${project.url}" 
+            class="iframe-container"
+            sandbox="allow-scripts allow-same-origin"
+            loading="lazy"
+            title="Preview de ${project.title}"
+          ></iframe>
+          <div class="preview-overlay absolute inset-0 bg-purple-600/90 flex items-center justify-center opacity-0 transition-opacity">
+            <span class="text-white font-semibold flex items-center gap-2">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+              </svg>
+              Abrir Projeto
+            </span>
+          </div>
+        </div>
+        <div class="p-4">
+          <h3 class="font-display font-semibold text-white text-lg">${project.title}</h3>
+          <p class="text-slate-400 text-sm mt-1 truncate">${project.url}</p>
+        </div>
+      `;
+
+            return card;
+        }
+
+        function renderProjects() {
+            const grid = document.getElementById('projects-grid');
+            const emptyState = document.getElementById('empty-state');
+
+            grid.innerHTML = '';
+
+            if (projects.length === 0) {
+                emptyState.classList.remove('hidden');
+                grid.classList.add('hidden');
+            } else {
+                emptyState.classList.add('hidden');
+                grid.classList.remove('hidden');
+
+                projects.forEach((project, index) => {
+                    const card = createProjectCard(project, index);
+                    grid.appendChild(card);
+                });
+            }
+        }
+
+        async function onConfigChange(config) {
+            document.getElementById('profile-name').textContent = config.profile_name || defaultConfig.profile_name;
+            document.getElementById('profile-title').textContent = config.profile_title || defaultConfig.profile_title;
+            document.getElementById('profile-description').textContent = config.profile_description || defaultConfig.profile_description;
+            document.getElementById('projects-title').textContent = config.projects_title || defaultConfig.projects_title;
+
+            // Apply colors
+            const app = document.getElementById('app');
+            app.style.background = `linear-gradient(135deg, ${config.background_color || defaultConfig.background_color} 0%, ${config.secondary_color || defaultConfig.secondary_color}20 50%, ${config.background_color || defaultConfig.background_color} 100%)`;
+
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.style.backgroundColor = `${config.surface_color || defaultConfig.surface_color}80`;
+            });
+        }
+
+        function mapToCapabilities(config) {
+            return {
+                recolorables: [
+                    {
+                        get: () => config.background_color || defaultConfig.background_color,
+                        set: (value) => { config.background_color = value; window.elementSdk.setConfig({ background_color: value }); }
+                    },
+                    {
+                        get: () => config.surface_color || defaultConfig.surface_color,
+                        set: (value) => { config.surface_color = value; window.elementSdk.setConfig({ surface_color: value }); }
+                    },
+                    {
+                        get: () => config.text_color || defaultConfig.text_color,
+                        set: (value) => { config.text_color = value; window.elementSdk.setConfig({ text_color: value }); }
+                    },
+                    {
+                        get: () => config.primary_color || defaultConfig.primary_color,
+                        set: (value) => { config.primary_color = value; window.elementSdk.setConfig({ primary_color: value }); }
+                    },
+                    {
+                        get: () => config.secondary_color || defaultConfig.secondary_color,
+                        set: (value) => { config.secondary_color = value; window.elementSdk.setConfig({ secondary_color: value }); }
+                    }
+                ],
+                borderables: [],
+                fontEditable: undefined,
+                fontSizeable: undefined
+            };
+        }
+
+        function mapToEditPanelValues(config) {
+            return new Map([
+                ["profile_name", config.profile_name || defaultConfig.profile_name],
+                ["profile_title", config.profile_title || defaultConfig.profile_title],
+                ["profile_description", config.profile_description || defaultConfig.profile_description],
+                ["projects_title", config.projects_title || defaultConfig.projects_title]
+            ]);
+        }
+
+        // Initialize
+        renderProjects();
+
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities,
+                mapToEditPanelValues
+            });
+        }
+    </script>
+
+</html>
